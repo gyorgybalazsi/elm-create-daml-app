@@ -12,37 +12,6 @@
 		node: document.getElementById('myapp'),
 	});
 
-  	const wsProtocol = "daml.ws.auth";
-	const tokenPrefix = "jwt.token.";
-	const jwt = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwczovL2RhbWwuY29tL2xlZGdlci1hcGkiOnsibGVkZ2VySWQiOiJjcmVhdGUtZGFtbC1hcHAtc2FuZGJveCIsImFwcGxpY2F0aW9uSWQiOiJmb29iYXIiLCJhY3RBcyI6WyJBbGljZSJdfX0.ahT0RApOdZlrC5u0BH7ybdQcYY_DKLDQkdPCK8dz3R4";
-	const subprotocols = [`${tokenPrefix}${jwt}`, wsProtocol];
-
-	const ws = new WebSocket("ws://localhost:7575/v1/stream/parties", subprotocols);
-
-	ws.addEventListener("open", function open() {
-	ws.send(JSON.stringify({templateIds: ["Iou:Iou"]}));
-	});
-
-	ws.addEventListener("message", function (data) {
-		app.ports.partiesStream.send(event.data);
-	});
-
-	/* const wsProtocol = "daml.ws.auth";
-	const tokenPrefix = "jwt.token.";
-	const jwt =
-	"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwczovL2RhbWwuY29tL2xlZGdlci1hcGkiOnsibGVkZ2VySWQiOiJNeUxlZGdlciIsImFwcGxpY2F0aW9uSWQiOiJIVFRQLUpTT04tQVBJLUdhdGV3YXkiLCJhY3RBcyI6WyJBbGljZSJdfX0.34zzF_fbWv7p60r5s1kKzwndvGdsJDX-W4Xhm4oVdp";
-	const subprotocols = [`${tokenPrefix}${jwt}`, wsProtocol];
-
-	const ws = new WebSocket("ws://localhost:7575/v1/stream/query", subprotocols);
-
-	ws.addEventListener("open", function open() {
-	ws.send(JSON.stringify({templateIds: ["User:User"]}));
-	});
-
-	ws.addEventListener("message", function (data) {
-	console.log(data);
-	}); */
-
 
   </script>
 </body>

@@ -7083,7 +7083,8 @@ var $author$project$Main$followerContainerAttributes = _List_fromArray(
 		A2($elm$html$Html$Attributes$style, 'display', 'flex'),
 		A2($elm$html$Html$Attributes$style, 'flex-direction', 'row'),
 		A2($elm$html$Html$Attributes$style, 'justify-content', 'center'),
-		A2($elm$html$Html$Attributes$style, 'width', '300px')
+		A2($elm$html$Html$Attributes$style, 'width', '300px'),
+		A2($elm$html$Html$Attributes$style, 'margin', '6px')
 	]);
 var $elm$virtual_dom$VirtualDom$Normal = function (a) {
 	return {$: 'Normal', a: a};
@@ -7150,7 +7151,8 @@ var $author$project$Main$followingContainerAttributes = _List_fromArray(
 		A2($elm$html$Html$Attributes$style, 'justify-content', 'space-evenly'),
 		A2($elm$html$Html$Attributes$style, 'align-items', 'center'),
 		A2($elm$html$Html$Attributes$style, 'width', '300px'),
-		A2($elm$html$Html$Attributes$style, 'border', '1px solid grey')
+		A2($elm$html$Html$Attributes$style, 'border', '1px solid grey'),
+		A2($elm$html$Html$Attributes$style, 'margin', '6px')
 	]);
 var $elm$html$Html$h3 = _VirtualDom_node('h3');
 var $elm$html$Html$input = _VirtualDom_node('input');
@@ -7167,8 +7169,9 @@ var $author$project$Main$jwtContainerAttibutes = _List_fromArray(
 		A2($elm$html$Html$Attributes$style, 'width', '500px'),
 		A2($elm$html$Html$Attributes$style, 'display', 'flex'),
 		A2($elm$html$Html$Attributes$style, 'flex-direction', 'column'),
-		A2($elm$html$Html$Attributes$style, 'justify-content', 'space-evenly'),
-		A2($elm$html$Html$Attributes$style, 'align-items', 'center')
+		A2($elm$html$Html$Attributes$style, 'justify-content', 'center'),
+		A2($elm$html$Html$Attributes$style, 'align-items', 'center'),
+		A2($elm$html$Html$Attributes$style, 'margin', '6px')
 	]);
 var $author$project$Main$lggedInPageContainerAttributes = _List_fromArray(
 	[
@@ -7176,14 +7179,15 @@ var $author$project$Main$lggedInPageContainerAttributes = _List_fromArray(
 		A2($elm$html$Html$Attributes$style, 'height', '796px'),
 		A2($elm$html$Html$Attributes$style, 'flex-direction', 'column'),
 		A2($elm$html$Html$Attributes$style, 'align-items', 'center'),
-		A2($elm$html$Html$Attributes$style, 'justify-content', 'flex-start')
+		A2($elm$html$Html$Attributes$style, 'justify-content', 'flex-start'),
+		A2($elm$html$Html$Attributes$style, 'margin', '6px')
 	]);
 var $author$project$Main$loggedOutPageContainerAttributes = _List_fromArray(
 	[
 		A2($elm$html$Html$Attributes$style, 'display', 'flex'),
 		A2($elm$html$Html$Attributes$style, 'height', '796px'),
 		A2($elm$html$Html$Attributes$style, 'align-items', 'center'),
-		A2($elm$html$Html$Attributes$style, 'justify-content', 'space-evenly')
+		A2($elm$html$Html$Attributes$style, 'justify-content', 'center')
 	]);
 var $author$project$Main$loginContainerAttributes = _List_fromArray(
 	[
@@ -7191,7 +7195,8 @@ var $author$project$Main$loginContainerAttributes = _List_fromArray(
 		A2($elm$html$Html$Attributes$style, 'display', 'flex'),
 		A2($elm$html$Html$Attributes$style, 'flex-direction', 'column'),
 		A2($elm$html$Html$Attributes$style, 'justify-content', 'space-evenly'),
-		A2($elm$html$Html$Attributes$style, 'align-items', 'center')
+		A2($elm$html$Html$Attributes$style, 'align-items', 'center'),
+		A2($elm$html$Html$Attributes$style, 'margin', '6px')
 	]);
 var $author$project$Main$messagesContainerAttributes = $author$project$Main$followingContainerAttributes;
 var $author$project$Main$networkContainerAttributes = $author$project$Main$followingContainerAttributes;
@@ -7267,14 +7272,20 @@ var $author$project$Main$view = function (model) {
 						[
 							A2(
 							$elm$html$Html$div,
-							_List_Nil,
+							_List_fromArray(
+								[
+									A2($elm$html$Html$Attributes$style, 'margin', '6px')
+								]),
 							_List_fromArray(
 								[
 									$elm$html$Html$text('Create DAML app')
 								])),
 							A2(
 							$elm$html$Html$div,
-							_List_Nil,
+							_List_fromArray(
+								[
+									A2($elm$html$Html$Attributes$style, 'margin', '6px')
+								]),
 							_List_fromArray(
 								[
 									$elm$html$Html$text('If user doesn\'t exist, I will create. In any case, I need a JWT for her.')
@@ -7283,6 +7294,7 @@ var $author$project$Main$view = function (model) {
 							$elm$html$Html$input,
 							_List_fromArray(
 								[
+									A2($elm$html$Html$Attributes$style, 'margin', '6px'),
 									$elm$html$Html$Attributes$placeholder('Username'),
 									$elm$html$Html$Attributes$value(userCandidate),
 									$elm$html$Html$Events$onInput($author$project$Main$UpdateUserCandidate)
@@ -7292,6 +7304,7 @@ var $author$project$Main$view = function (model) {
 							$elm$html$Html$input,
 							_List_fromArray(
 								[
+									A2($elm$html$Html$Attributes$style, 'margin', '6px'),
 									$elm$html$Html$Attributes$placeholder('JWT token'),
 									$elm$html$Html$Attributes$value(userJwtToken),
 									$elm$html$Html$Events$onInput($author$project$Main$UpdateUserJwtToken)
@@ -7301,6 +7314,7 @@ var $author$project$Main$view = function (model) {
 							$elm$html$Html$button,
 							_List_fromArray(
 								[
+									A2($elm$html$Html$Attributes$style, 'margin', '6px'),
 									$elm$html$Html$Events$onClick(
 									A2($author$project$Main$LoginOrCreateUser, userCandidate, userJwtToken))
 								]),
@@ -7318,6 +7332,7 @@ var $author$project$Main$view = function (model) {
 							$elm$html$Html$div,
 							_List_fromArray(
 								[
+									A2($elm$html$Html$Attributes$style, 'margin', '6px'),
 									A2($elm$html$Html$Attributes$style, 'width', '500px'),
 									A2($elm$html$Html$Attributes$style, 'overflow-wrap', 'break-word')
 								]),
@@ -7329,6 +7344,7 @@ var $author$project$Main$view = function (model) {
 							$elm$html$Html$div,
 							_List_fromArray(
 								[
+									A2($elm$html$Html$Attributes$style, 'margin', '6px'),
 									A2($elm$html$Html$Attributes$style, 'width', '500px'),
 									A2($elm$html$Html$Attributes$style, 'overflow-wrap', 'break-word')
 								]),
@@ -7340,6 +7356,7 @@ var $author$project$Main$view = function (model) {
 							$elm$html$Html$div,
 							_List_fromArray(
 								[
+									A2($elm$html$Html$Attributes$style, 'margin', '6px'),
 									A2($elm$html$Html$Attributes$style, 'width', '500px'),
 									A2($elm$html$Html$Attributes$style, 'overflow-wrap', 'break-word')
 								]),
@@ -7351,6 +7368,7 @@ var $author$project$Main$view = function (model) {
 							$elm$html$Html$div,
 							_List_fromArray(
 								[
+									A2($elm$html$Html$Attributes$style, 'margin', '6px'),
 									A2($elm$html$Html$Attributes$style, 'width', '500px'),
 									A2($elm$html$Html$Attributes$style, 'overflow-wrap', 'break-word')
 								]),
@@ -7391,14 +7409,20 @@ var $author$project$Main$view = function (model) {
 							[
 								A2(
 								$elm$html$Html$h3,
-								_List_Nil,
+								_List_fromArray(
+									[
+										A2($elm$html$Html$Attributes$style, 'margin', '6px')
+									]),
 								_List_fromArray(
 									[
 										$elm$html$Html$text(username)
 									])),
 								A2(
 								$elm$html$Html$div,
-								_List_Nil,
+								_List_fromArray(
+									[
+										A2($elm$html$Html$Attributes$style, 'margin', '6px')
+									]),
 								_List_fromArray(
 									[
 										$elm$html$Html$text('Users I\'m following:')
@@ -7412,7 +7436,10 @@ var $author$project$Main$view = function (model) {
 									function (li) {
 										return A2(
 											$elm$html$Html$div,
-											_List_Nil,
+											_List_fromArray(
+												[
+													A2($elm$html$Html$Attributes$style, 'margin', '6px')
+												]),
 											_List_fromArray(
 												[
 													$elm$html$Html$text(li)
@@ -7423,7 +7450,10 @@ var $author$project$Main$view = function (model) {
 								[
 									A2(
 									$elm$html$Html$div,
-									_List_Nil,
+									_List_fromArray(
+										[
+											A2($elm$html$Html$Attributes$style, 'margin', '6px')
+										]),
 									_List_fromArray(
 										[
 											$elm$html$Html$text(
@@ -7450,6 +7480,7 @@ var $author$project$Main$view = function (model) {
 									$elm$html$Html$button,
 									_List_fromArray(
 										[
+											A2($elm$html$Html$Attributes$style, 'margin', '6px'),
 											$elm$html$Html$Events$onClick($author$project$Main$FollowUser)
 										]),
 									_List_fromArray(
@@ -7466,14 +7497,20 @@ var $author$project$Main$view = function (model) {
 							[
 								A2(
 								$elm$html$Html$h3,
-								_List_Nil,
+								_List_fromArray(
+									[
+										A2($elm$html$Html$Attributes$style, 'margin', '6px')
+									]),
 								_List_fromArray(
 									[
 										$elm$html$Html$text('The Network')
 									])),
 								A2(
 								$elm$html$Html$div,
-								_List_Nil,
+								_List_fromArray(
+									[
+										A2($elm$html$Html$Attributes$style, 'margin', '6px')
+									]),
 								_List_fromArray(
 									[
 										$elm$html$Html$text('My followers')
@@ -7494,14 +7531,20 @@ var $author$project$Main$view = function (model) {
 							[
 								A2(
 								$elm$html$Html$h3,
-								_List_Nil,
+								_List_fromArray(
+									[
+										A2($elm$html$Html$Attributes$style, 'margin', '6px')
+									]),
 								_List_fromArray(
 									[
 										$elm$html$Html$text('Messages')
 									])),
 								A2(
 								$elm$html$Html$div,
-								_List_Nil,
+								_List_fromArray(
+									[
+										A2($elm$html$Html$Attributes$style, 'margin', '6px')
+									]),
 								_List_fromArray(
 									[
 										$elm$html$Html$text('Send a message to a follower')
@@ -7517,7 +7560,10 @@ var $author$project$Main$view = function (model) {
 									function (x) {
 										return A2(
 											$elm$html$Html$option,
-											_List_Nil,
+											_List_fromArray(
+												[
+													A2($elm$html$Html$Attributes$style, 'margin', '6px')
+												]),
 											_List_fromArray(
 												[
 													$elm$html$Html$text(x)
@@ -7528,6 +7574,7 @@ var $author$project$Main$view = function (model) {
 								$elm$html$Html$input,
 								_List_fromArray(
 									[
+										A2($elm$html$Html$Attributes$style, 'margin', '6px'),
 										$elm$html$Html$Attributes$placeholder('Write a message'),
 										$elm$html$Html$Attributes$value(draftContent),
 										$elm$html$Html$Events$onInput($author$project$Main$UpdateMessageContent),
@@ -7538,6 +7585,7 @@ var $author$project$Main$view = function (model) {
 								$elm$html$Html$button,
 								_List_fromArray(
 									[
+										A2($elm$html$Html$Attributes$style, 'margin', '6px'),
 										$elm$html$Html$Events$onClick($author$project$Main$SendMessage)
 									]),
 								_List_fromArray(
@@ -7550,7 +7598,10 @@ var $author$project$Main$view = function (model) {
 							function (msg) {
 								return A2(
 									$elm$html$Html$div,
-									_List_Nil,
+									_List_fromArray(
+										[
+											A2($elm$html$Html$Attributes$style, 'margin', '6px')
+										]),
 									_List_fromArray(
 										[
 											$elm$html$Html$text(msg)

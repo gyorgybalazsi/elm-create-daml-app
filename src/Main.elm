@@ -368,17 +368,17 @@ view model =
         -- FULL PAGE
             div loggedOutPageContainerAttributes
                 [ div loginContainerAttributes 
-                        [ div [] [text "Create DAML app"]
-                        ,div [] [text "If user doesn't exist, I will create. In any case, I need a JWT for her."]
-                        , input [ placeholder "Username", value userCandidate, onInput UpdateUserCandidate][] 
-                        , input [ placeholder "JWT token", value userJwtToken, onInput UpdateUserJwtToken][]  -- TODO only display when JWT needed
-                        , button [ onClick (LoginOrCreateUser userCandidate userJwtToken)] [text "Log in"]
+                        [ div [style "margin" "6px"] [text "Create DAML app"]
+                        ,div [style "margin" "6px"] [text "If user doesn't exist, I will create. In any case, I need a JWT for her."]
+                        , input [ style "margin" "6px", placeholder "Username", value userCandidate, onInput UpdateUserCandidate][] 
+                        , input [ style "margin" "6px", placeholder "JWT token", value userJwtToken, onInput UpdateUserJwtToken][] 
+                        , button [ style "margin" "6px", onClick (LoginOrCreateUser userCandidate userJwtToken)] [text "Log in"]
                         ]
                 , div jwtContainerAttibutes
-                        [ div [style "width" "500px", style "overflow-wrap" "break-word"] [text <| "JWT token for Alice: " ++ "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwczovL2RhbWwuY29tL2xlZGdlci1hcGkiOnsibGVkZ2VySWQiOiJjcmVhdGUtZGFtbC1hcHAtc2FuZGJveCIsImFwcGxpY2F0aW9uSWQiOiJmb29iYXIiLCJhY3RBcyI6WyJBbGljZSJdfX0.ahT0RApOdZlrC5u0BH7ybdQcYY_DKLDQkdPCK8dz3R4"]
-                        , div [style "width" "500px", style "overflow-wrap" "break-word"] [text <| "JWT token for Bob: " ++ "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwczovL2RhbWwuY29tL2xlZGdlci1hcGkiOnsibGVkZ2VySWQiOiJjcmVhdGUtZGFtbC1hcHAtc2FuZGJveCIsImFwcGxpY2F0aW9uSWQiOiJIVFRQLUpTT04tQVBJLUdhdGV3YXkiLCJhY3RBcyI6WyJCb2IiXX19.BicsLjcXTwN8qZcAARfUD0yWi119xX7ywvDt7OsLyJ0"]
-                        , div [style "width" "500px", style "overflow-wrap" "break-word"] [text <| "JWT token for Carol : " ++ "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwczovL2RhbWwuY29tL2xlZGdlci1hcGkiOnsibGVkZ2VySWQiOiJjcmVhdGUtZGFtbC1hcHAtc2FuZGJveCIsImFwcGxpY2F0aW9uSWQiOiJmb29iYXIiLCJhY3RBcyI6WyJDYXJvbCJdfX0.xP1EXjdur8rZFtKLuajjcMkja9c2lW34OZxAn7elTKI"]
-                        , div [style "width" "500px", style "overflow-wrap" "break-word"] [text <| "JWT token for Dave : " ++ "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwczovL2RhbWwuY29tL2xlZGdlci1hcGkiOnsibGVkZ2VySWQiOiJjcmVhdGUtZGFtbC1hcHAtc2FuZGJveCIsImFwcGxpY2F0aW9uSWQiOiJmb29iYXIiLCJhY3RBcyI6WyJEYXZlIl19fQ.0VCm2qkWE92hazlnE_6pwTa-JamjkGHbmO1Ou5Bc3q8"]
+                        [ div [style "margin" "6px", style "width" "500px", style "overflow-wrap" "break-word"] [text <| "JWT token for Alice: " ++ "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwczovL2RhbWwuY29tL2xlZGdlci1hcGkiOnsibGVkZ2VySWQiOiJjcmVhdGUtZGFtbC1hcHAtc2FuZGJveCIsImFwcGxpY2F0aW9uSWQiOiJmb29iYXIiLCJhY3RBcyI6WyJBbGljZSJdfX0.ahT0RApOdZlrC5u0BH7ybdQcYY_DKLDQkdPCK8dz3R4"]
+                        , div [style "margin" "6px", style "width" "500px", style "overflow-wrap" "break-word"] [text <| "JWT token for Bob: " ++ "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwczovL2RhbWwuY29tL2xlZGdlci1hcGkiOnsibGVkZ2VySWQiOiJjcmVhdGUtZGFtbC1hcHAtc2FuZGJveCIsImFwcGxpY2F0aW9uSWQiOiJIVFRQLUpTT04tQVBJLUdhdGV3YXkiLCJhY3RBcyI6WyJCb2IiXX19.BicsLjcXTwN8qZcAARfUD0yWi119xX7ywvDt7OsLyJ0"]
+                        , div [style "margin" "6px", style "width" "500px", style "overflow-wrap" "break-word"] [text <| "JWT token for Carol : " ++ "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwczovL2RhbWwuY29tL2xlZGdlci1hcGkiOnsibGVkZ2VySWQiOiJjcmVhdGUtZGFtbC1hcHAtc2FuZGJveCIsImFwcGxpY2F0aW9uSWQiOiJmb29iYXIiLCJhY3RBcyI6WyJDYXJvbCJdfX0.xP1EXjdur8rZFtKLuajjcMkja9c2lW34OZxAn7elTKI"]
+                        , div [style "margin" "6px", style "width" "500px", style "overflow-wrap" "break-word"] [text <| "JWT token for Dave : " ++ "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwczovL2RhbWwuY29tL2xlZGdlci1hcGkiOnsibGVkZ2VySWQiOiJjcmVhdGUtZGFtbC1hcHAtc2FuZGJveCIsImFwcGxpY2F0aW9uSWQiOiJmb29iYXIiLCJhY3RBcyI6WyJEYXZlIl19fQ.0VCm2qkWE92hazlnE_6pwTa-JamjkGHbmO1Ou5Bc3q8"]
                         ]
                 ]
     -- LOGGED IN PAGE
@@ -389,35 +389,35 @@ view model =
                 -- FOLLOWING
                 , div followingContainerAttributes
                     <|  append 
-                            [ h3 [] [text username]
-                            , div [] [text "Users I'm following:"]
+                            [ h3 [style "margin" "6px"] [text username]
+                            , div [style "margin" "6px"] [text "Users I'm following:"]
                             ]
-                    <|  append ( List.reverse (List.map (\li -> div [] [text li]) following) )
-                    <|  [ div []    [text <|    let 
-                                                    otherUsers = List.filter (\x -> (x == username || List.member x following) == False) parties
-                                                in 
-                                                    if List.isEmpty otherUsers then "No users to follow!"
+                    <|  append ( List.reverse (List.map (\li -> div [style "margin" "6px"] [text li]) following) )
+                    <|  [ div [style "margin" "6px"]    [text <|    let 
+                                                                        otherUsers = List.filter (\x -> (x == username || List.member x following) == False) parties
+                                                                    in 
+                                                                        if List.isEmpty otherUsers then "No users to follow!"
                                                     else "Users I'm not following: " ++ (String.join ", " otherUsers)]           
                         , input [ placeholder "Username to follow", value toFollow, onInput UpdateToFollow][]
-                        , button [ onClick FollowUser] [text "Follow"]
+                        , button [ style "margin" "6px", onClick FollowUser] [text "Follow"]
                         ]
                 -- NETWORK - FOLLOWERS
                 , div networkContainerAttributes
                     <| append
-                        [ h3 [] [text "The Network"]
-                        , div [] [text "My followers"]
+                        [ h3 [style "margin" "6px"] [text "The Network"]
+                        , div [style "margin" "6px"] [text "My followers"]
                         ]
                     <| (List.map (\name -> followerContainer following name) followers) 
                 -- MESSAGES
                 , div messagesContainerAttributes
                     <| append
-                        [ h3 [] [text "Messages"]
-                        , div [] [text "Send a message to a follower"]
-                        , select [onInput UpdateMessageReceiver] (List.map (\x -> option [] [text x]) followers)
-                        , input [ placeholder "Write a message", value draftContent, onInput UpdateMessageContent, onEnter SendMessage][] 
-                        , button [ onClick SendMessage] [text "Send"]
+                        [ h3 [style "margin" "6px"] [text "Messages"]
+                        , div [style "margin" "6px"] [text "Send a message to a follower"]
+                        , select [onInput UpdateMessageReceiver] (List.map (\x -> option [style "margin" "6px"] [text x]) followers)
+                        , input [ style "margin" "6px", placeholder "Write a message", value draftContent, onInput UpdateMessageContent, onEnter SendMessage][] 
+                        , button [ style "margin" "6px", onClick SendMessage] [text "Send"]
                         ]
-                    <| (List.map (\msg -> div [] [text msg]) (List.map printMessage messages)) 
+                    <| (List.map (\msg -> div [style "margin" "6px"] [text msg]) (List.map printMessage messages)) 
                 ]
 
 followerContainer : List String -> String -> Html Msg 
@@ -452,12 +452,20 @@ printMessage message =
 
 ---- LOGGEDOUT
 
-loggedOutPageContainerAttributes : List (Attribute Msg)
+{- loggedOutPageContainerAttributes : List (Attribute Msg)
 loggedOutPageContainerAttributes  = 
     [ style "display" "flex"
     , style "height" "796px"
     , style "align-items" "center"
     , style "justify-content" "space-evenly"
+    ]   -}
+
+loggedOutPageContainerAttributes : List (Attribute Msg)
+loggedOutPageContainerAttributes  = 
+    [ style "display" "flex"
+    , style "height" "796px"
+    , style "align-items" "center"
+    , style "justify-content" "center"
     ]  
 
 loginContainerAttributes : List (Attribute Msg)
@@ -467,6 +475,7 @@ loginContainerAttributes =
     , style "flex-direction" "column"
     , style "justify-content" "space-evenly"
     , style "align-items" "center"
+    , style "margin" "6px"
     ]  
 
 jwtContainerAttibutes = 
@@ -474,8 +483,9 @@ jwtContainerAttibutes =
     , style "width" "500px"
     , style "display" "flex"
     , style "flex-direction" "column"
-    , style "justify-content" "space-evenly"
+    , style "justify-content" "center"
     , style "align-items" "center"
+    , style "margin" "6px"
     ] 
 
 --LOGGEDIN 
@@ -488,6 +498,7 @@ lggedInPageContainerAttributes  =
     --, style "justify-content" "space-evenly"
     , style "align-items" "center"
     , style "justify-content" "flex-start"
+    , style "margin" "6px"
     ]  
 
 followingContainerAttributes : List (Attribute Msg)
@@ -498,6 +509,7 @@ followingContainerAttributes =
     , style "align-items" "center"
     , style "width" "300px"
     , style "border" "1px solid grey"
+    , style "margin" "6px"
     ]  
 
 networkContainerAttributes : List (Attribute Msg)
@@ -512,6 +524,7 @@ followerContainerAttributes =
     , style "flex-direction" "row"
     , style "justify-content" "center"
     , style "width" "300px"
+    , style "margin" "6px"
     ] 
 
 
