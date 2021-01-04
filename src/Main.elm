@@ -391,10 +391,13 @@ view model =
                     <|  append 
                             [ h3 [] [text username]
                             , div [] [text "Users I'm following:"]
-                            , div [] [text "--------"]
                             ]
                     <|  append ( List.reverse (List.map (\li -> div [] [text li]) following) )
-                    <|  [ div [] [text <| "Known parties: " ++ (String.join ", " parties)]
+                    <|  [ div []    [text <|    let 
+                                                    otherUsers = List.filter (\x -> (x == username || List.member x following) == False) parties
+                                                in 
+                                                    if List.isEmpty otherUsers then "No users to follow!"
+                                                    else "Users I'm not following: " ++ (String.join ", " otherUsers)]           
                         , input [ placeholder "Username to follow", value toFollow, onInput UpdateToFollow][]
                         , button [ onClick FollowUser] [text "Follow"]
                         ]

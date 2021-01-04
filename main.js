@@ -6995,7 +6995,10 @@ var $author$project$Main$update = F2(
 						$elm$core$Platform$Cmd$none);
 				case 'FollowUser':
 					return _Utils_Tuple2(
-						model,
+						$author$project$Main$LoggedIn(
+							_Utils_update(
+								loggedInData,
+								{toFollow: ''})),
 						A3($author$project$Main$followUser, loggedInData.username, loggedInData.toFollow, loggedInData.userJwtToken));
 				case 'FollowBackFollower':
 					var name = msg.a;
@@ -7151,6 +7154,13 @@ var $author$project$Main$followingContainerAttributes = _List_fromArray(
 	]);
 var $elm$html$Html$h3 = _VirtualDom_node('h3');
 var $elm$html$Html$input = _VirtualDom_node('input');
+var $elm$core$List$isEmpty = function (xs) {
+	if (!xs.b) {
+		return true;
+	} else {
+		return false;
+	}
+};
 var $author$project$Main$jwtContainerAttibutes = _List_fromArray(
 	[
 		A2($elm$html$Html$Attributes$style, 'height', '500px'),
@@ -7392,13 +7402,6 @@ var $author$project$Main$view = function (model) {
 								_List_fromArray(
 									[
 										$elm$html$Html$text('Users I\'m following:')
-									])),
-								A2(
-								$elm$html$Html$div,
-								_List_Nil,
-								_List_fromArray(
-									[
-										$elm$html$Html$text('--------')
 									]))
 							]),
 						A2(
@@ -7424,7 +7427,15 @@ var $author$project$Main$view = function (model) {
 									_List_fromArray(
 										[
 											$elm$html$Html$text(
-											'Known parties: ' + A2($elm$core$String$join, ', ', parties))
+											function () {
+												var otherUsers = A2(
+													$elm$core$List$filter,
+													function (x) {
+														return !(_Utils_eq(x, username) || A2($elm$core$List$member, x, following));
+													},
+													parties);
+												return $elm$core$List$isEmpty(otherUsers) ? 'No users to follow!' : ('Users I\'m not following: ' + A2($elm$core$String$join, ', ', otherUsers));
+											}())
 										])),
 									A2(
 									$elm$html$Html$input,
