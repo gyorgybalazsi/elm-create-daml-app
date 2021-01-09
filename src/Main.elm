@@ -452,14 +452,6 @@ printMessage message =
 
 ---- LOGGEDOUT
 
-{- loggedOutPageContainerAttributes : List (Attribute Msg)
-loggedOutPageContainerAttributes  = 
-    [ style "display" "flex"
-    , style "height" "796px"
-    , style "align-items" "center"
-    , style "justify-content" "space-evenly"
-    ]   -}
-
 loggedOutPageContainerAttributes : List (Attribute Msg)
 loggedOutPageContainerAttributes  = 
     [ style "display" "flex"
@@ -526,5 +518,3 @@ followerContainerAttributes =
     , style "width" "300px"
     , style "margin" "6px"
     ] 
-
-
